@@ -1,0 +1,8 @@
+wb = xlsx_package.workbook
+wb.add_worksheet(name: "Article") do |sheet|
+    sheet.add_row ["ID", "Article","Content($)"]
+    @articles.each do |article|
+        sheet.add_row [article.id,title.string,content.text]
+    end
+  send_data p.to_stream.read, type: "article/xlsx", filename: "filename.xlsx"
+end
